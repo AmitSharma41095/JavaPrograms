@@ -7,33 +7,36 @@ public class Arrays {
 	public static void main(String[] args) {
 		Arrays arr = new Arrays();
 		
-//		arr._1PrintElementsOfArray();
-//		arr._2CopyOneArrayToAnother();
-//		arr._3PrintElementsInreverseOrder();
-//		arr._4EvenAndOddElements();
-//		arr._5SumOfAllElementsOfArray();
-//		arr._6SortArray_AscendingOrder();
-//		arr._7SortArray_DescendingOrder();
-//		arr._8LargestElementInArray();
-//		arr._9SmallestElementInArray();
-		arr._10MissingNumbersInArray();
+		arr._1PrintElementsOfArray();
+		arr._2CopyOneArrayToAnother();
+		arr._3PrintElementsInreverseOrder();
+		arr._4EvenAndOddElements();
+		arr._5SumOfAllElementsOfArray();
+		arr._6SortArray_AscendingOrder();
+		arr._7SortArray_DescendingOrder();
+		arr._8LargestElementInArray();
+		arr._9SmallestElementInArray();
+//		arr._10MissingNumbersInArray();
 
 	}
 	
 	public void _1PrintElementsOfArray() {
+		System.out.println("***** 1. Print elements of an array *****");
 		int a[] = {1,2,3,4,5};
 		
 		System.out.println("Elements of an array are ::");
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i]+ " ");
 		}
+		System.out.println("\n-------------------------------------------------------------------");
 	}
 	
 	public void _2CopyOneArrayToAnother() {
+		System.out.println("***** 2. Copy one array to another *****");
 		int a[] = {1,2,3,4,5};
 		int b[] = new int[a.length];
 		
-		System.out.print("Elements of first array are ::");
+		System.out.print("Elements of first array are :: ");
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i]+ " ");
 		}
@@ -43,14 +46,15 @@ public class Arrays {
 		}
 		
 		System.out.println();
-		System.out.print("Elements of copied array are ::");
+		System.out.print("Elements of copied array are :: ");
 		for(int i=0; i<b.length; i++) {
 			System.out.print(b[i]+ " ");
 		}
-		
+		System.out.println("\n-------------------------------------------------------------------");
 	}
 
 	public void _3PrintElementsInreverseOrder() {
+		System.out.println("***** 3. Print elements of an array in reverse order *****");
 		int a[] = {1,2,3,4,5};
 		
 		System.out.println("Elements of an array are ::");
@@ -63,9 +67,11 @@ public class Arrays {
 		for(int i=a.length-1; i>=0 ; i--) {
 			System.out.print(a[i]+ " ");
 		}
+		System.out.println("\n-------------------------------------------------------------------");
 	}
 	
 	public void _4EvenAndOddElements() {
+		System.out.println("***** 4. Print elements in array at even and odd positions *****");
 		int a[] = {1,2,3,4,5,6,7,8,9,10};
 		
 		System.out.println("Elements of an array are ::");
@@ -75,15 +81,17 @@ public class Arrays {
 		
 		System.out.println();
 		for(int i=0; i<a.length; i++) {
-			if(a[i]%2==0) {
+			if(i%2==0) {
 				System.out.println("element at "+i+" position is "+a[i]+ " ,Its an even number!!");
 			}else {
 				System.out.println("element at "+i+" position is "+a[i]+ " ,Its an odd number!!");
 			}
 		}
+		System.out.println("-------------------------------------------------------------------");
 	}
 	
 	public void _5SumOfAllElementsOfArray() {
+		System.out.println("***** 5. Sum of all elements of an array *****");
 		int a[] = {1,2,3,4,5};
 		
 		System.out.println("Elements of an array are ::");
@@ -97,9 +105,11 @@ public class Arrays {
 			sum = sum + a[i];
 		}
 		System.out.println("Sum of all elements are : "+sum);
+		System.out.println("-------------------------------------------------------------------");
 	}
 	
 	public void _6SortArray_AscendingOrder() {
+		System.out.println("***** 6. Sort elements of an array in ascending order *****");
 		int a[]= {10,45,30,99,23,67,5,18,37};
 		
 		System.out.println("Elements of an array are ::");
@@ -123,10 +133,11 @@ public class Arrays {
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i]+ " ");
 		}
-		
+		System.out.println("\n-------------------------------------------------------------------");
 	}
 
 	public void _7SortArray_DescendingOrder() {
+		System.out.println("***** 6. Sort elements of an array in descending order *****");
 		int a[]= {10,45,30,99,23,67,5,18,37};
 		
 		System.out.println("Elements of an array are ::");
@@ -150,10 +161,11 @@ public class Arrays {
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i]+ " ");
 		}
-		
+		System.out.println("\n-------------------------------------------------------------------");
 	}
 	
 	public void _8LargestElementInArray() {
+		System.out.println("***** 8. Print largest and second largest element in an array *****");
 		int a[]= {10,45,30,99,23,67,5,18,37};
 		
 		System.out.println("Elements of an array are ::");
@@ -171,10 +183,12 @@ public class Arrays {
 		
 		System.out.println("\nLargest element is :"+a[a.length-1]);
 		System.out.println("Second Largest element is :"+a[a.length-2]);
+		System.out.println("-------------------------------------------------------------------");
 		
 	}
 
 	public void _9SmallestElementInArray() {
+		System.out.println("***** 8. Print largest and second smallest element in an array *****");
 		int a[]= {10,45,30,99,23,67,5,18,37};
 		
 		System.out.println("Elements of an array are ::");
@@ -192,7 +206,7 @@ public class Arrays {
 		
 		System.out.println("\nSmallest element is :"+a[0]);
 		System.out.println("Second Smallest element is :"+a[1]);
-		
+		System.out.println("-------------------------------------------------------------------");
 	}
 
 	public void _10MissingNumbersInArray() {
