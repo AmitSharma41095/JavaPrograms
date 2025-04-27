@@ -7,16 +7,18 @@ public class Arrays {
 	public static void main(String[] args) {
 		Arrays arr = new Arrays();
 		
-		arr._1PrintElementsOfArray();
-		arr._2CopyOneArrayToAnother();
-		arr._3PrintElementsInreverseOrder();
-		arr._4EvenAndOddElements();
-		arr._5SumOfAllElementsOfArray();
-		arr._6SortArray_AscendingOrder();
-		arr._7SortArray_DescendingOrder();
-		arr._8LargestElementInArray();
-		arr._9SmallestElementInArray();
+//		arr._1PrintElementsOfArray();
+//		arr._2CopyOneArrayToAnother();
+//		arr._3PrintElementsInreverseOrder();
+//		arr._4EvenAndOddElements();
+//		arr._5SumOfAllElementsOfArray();
+//		arr._6SortArray_AscendingOrder();
+//		arr._7SortArray_DescendingOrder();
+//		arr._8LargestElementInArray();
+//		arr._9SmallestElementInArray();
 //		arr._10MissingNumbersInArray();
+		arr._11Print_duplicate_elements_in_an_array();
+//		arr._14Frequency_Of_Each_Element_In_An_Array();
 
 	}
 	
@@ -188,7 +190,7 @@ public class Arrays {
 	}
 
 	public void _9SmallestElementInArray() {
-		System.out.println("***** 8. Print largest and second smallest element in an array *****");
+		System.out.println("***** 9. Print smallest and second smallest element in an array *****");
 		int a[]= {10,45,30,99,23,67,5,18,37};
 		
 		System.out.println("Elements of an array are ::");
@@ -210,6 +212,7 @@ public class Arrays {
 	}
 
 	public void _10MissingNumbersInArray() {
+		System.out.println("***** 10. Program to find missing number in an integer array *****");
 		int a[]= {1,2,3,4,5,6,7,8,9,10};
 		
 		System.out.println("Elements of first array are ::");
@@ -235,9 +238,68 @@ public class Arrays {
 		int difference = firstArraySum-secondArraySum;
 		
 		System.out.println("Missing number is :: "+difference);
+		System.out.println("-------------------------------------------------------------------");
+	}
+	
+	public void _11Print_duplicate_elements_in_an_array() {
+		System.out.println("***** 11. Print duplicate elements in an array. *****");
 		
+		int a[]= {4,5,2,1,5,3,2,1,8,4,2,4}; 
+		System.out.println("Array elements are :: "+ java.util.Arrays.toString(a));
+		
+		for(int i=0; i<a.length; i++) {
+			for(int j=i+1; j<a.length; j++ ) {
+				if(a[i]==a[j]) {
+					System.out.print(a[i] + " ");
+					break;
+				}
+			}
+		}
+		
+		System.out.println("-------------------------------------------------------------------");
 	}
 
+	public void _14Frequency_Of_Each_Element_In_An_Array() {
+		System.out.println("***** 14. Program to find frequency of each element in an array. *****");
+		
+		int a[]= {1,2,3,4,1,2,5,6,4,3,4}; //{1,2,3,4,-1,-1,5,6,-1,-1,-1};
+		int fr[] = new int[a.length];
+		int visited = -1;
+		System.out.println("Array elements are :: "+ java.util.Arrays.toString(a));
+		
+		for(int i=0; i<a.length; i++) {
+			int count = 1;
+			for(int j=i+1; j<a.length; j++ ) {
+				if(a[i]==a[j]) {
+					count++;
+					fr[j]=visited;
+				}
+			}
+			if(fr[i]!=visited) {
+				fr[i] = count;
+			}
+		}
+		
+		System.out.println("Frequency of each number is : ");
+		for(int k=0; k<fr.length; k++) {
+			if(fr[k]!=visited) {
+				System.out.println(a[k]+ " | "+ fr[k]);
+			}
+		}
+		
+		System.out.println("Maximum occuring character");
+		int max =0;
+		int maxPos = 0;
+		for(int m=0; m<fr.length; m++) {
+			if(fr[m]>max) {
+				max = fr[m];
+				maxPos = m;
+			}
+		}
+		System.out.println("Number "+ a[maxPos] + " repeating maximum "+ max+ " times");
+		
+		System.out.println("-------------------------------------------------------------------");
+	}
 	
 	
 	
