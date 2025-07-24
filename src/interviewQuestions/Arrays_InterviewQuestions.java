@@ -9,30 +9,66 @@ public class Arrays_InterviewQuestions {
 
 	public static void main(String[] args) {
 		
-		//31. Find common elements between two arrays
-		commonElements_In_2Arrays();
+//		//31. Find common elements between two arrays
+//		commonElements_In_2Arrays();
+//		
+//		//32. Find first and last element of Arraylist
+//		first_last_ElementOfArrayList();
+//		
+//		//33. Sort an array without using in-built method
+//		sortArrayAscendingOrder();
+//		
+//		//34. Remove duplicates from an Array
+//		removeDuplicatesFromArray();
+//		
+//		//35. Remove duplicates from an ArrayList
+//		removeDuplicatesFromArrayList();
+//		
+//		//36. Find the missing number in an Array
+//		missingNumberInArray();
+//		
+//		//37. Find the largest and smallest element in an Array
+//		largest_Smallest_InArray();
+//		
+//		//38. Search element in an Array
+//		searchElementArray();
+//		
+//		//39. Array consists of integers and special characters,sum only integers
+//		sumIntegers_IgnoreAlphabets_SpecialChars();
 		
-		//32. Find first and last element of Arraylist
-		first_last_ElementOfArrayList();
-		
-		//33. Sort an array without using in-built method
-		sortArrayAscendingOrder();
-		
-		//35. Remove duplicates from an ArrayList
-		removeDuplicatesFromArrayList();
-		
-		//36. Find the missing number in an Array
-		missingNumberInArray();
-		
-		//37. Find the largest and smallest element in an Array
-		largest_Smallest_InArray();
-		
-		//38. Search element in an Array
-		searchElementArray();
-		
-		//39. Array consists of integers and special characters,sum only integers
-		sumIntegers_IgnoreAlphabets_SpecialChars();
+		//40. Java program –findNonRepeatedElements - input array was given [ 1,1,2,2,3,4,5,5,6,6], Output – [3,4]
+		findNonRepeatedElements();
 
+	}
+
+	private static void findNonRepeatedElements() {
+		System.out.println("Java program –findNonRepeatedElements - input array was given [ 1,1,2,2,3,4,5,5,6,6], Output – [3,4]");
+		
+		
+		System.out.println("-------------------------------------------------------------------");
+	}
+
+	private static void removeDuplicatesFromArray() {
+		System.out.println("Remove duplicates from an Array");
+		
+		int[] array = {5, 2, 9, 1, 6, 2, 5};
+		System.out.println("Elements of array are :: "+ Arrays.toString(array));
+		Set<Integer> hashSet = new HashSet<Integer>();
+		
+		for(int a : array) {
+			hashSet.add(a);
+		}
+		
+		System.out.println("Hash Set : "+hashSet);
+		
+		int withoutDuplicates[] = new int[hashSet.size()];
+		int count=0;
+		for(int num :hashSet) {
+			withoutDuplicates[count++]= num;
+		}
+		
+		System.out.println("Array with duplicates removed: "+ Arrays.toString(withoutDuplicates));
+		System.out.println("-------------------------------------------------------------------");
 	}
 
 	private static void removeDuplicatesFromArrayList() {
