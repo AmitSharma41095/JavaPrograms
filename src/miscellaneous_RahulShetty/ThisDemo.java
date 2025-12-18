@@ -11,7 +11,8 @@ public class ThisDemo {
 		//this refers to current object - object scope lies in class level
 		System.out.println(this.a);
 		//Interview question : sum up the local and global variable
-		System.out.println("Sum :: "+a+this.a);
+		int sum = a+this.a;
+		System.out.println("Sum :: "+sum);
 	}
 
 	public static void main(String[] args) {

@@ -1,0 +1,106 @@
+Java
+
+1. Installation
+2. First java code
+3. Methods - for reusability
+4. Importance of classes and objects - objects are instances/references of classes
+		className obj = new className();  -> memory allocated with new keyword.
+		obj.methodName();
+5. Conditions : if	if else		for		while		do while		Print patterns
+6. Arrays : list of elements of similar type	int a[] = new int[5]	a[0]=1; a[1]=2;....  or int a[5]={1,2,3,4,5};
+		multidimensional array int b[][]= {{2,3,4},{5,7,8},{4,9,8}};
+		Code : Maximum and minimum number from multidimensional array.
+		code : Cisco interview - Find minimum number and also find maximum number in that column.
+		Code : Swap 2 numbers with or without using temp variable.
+		Code : Sort the array in ascending and descending order.
+7. Strings : default class in java
+		to define strings 2 ways - String literal (string s = "Hello") or Object of string String s = new String("Hello");
+		In string literal if value present inside SCP, then a new memory is not allocated. The variable will point to that element.
+		In Object creation, nothing is checked in SCP, it will always create a new variable in SCP.
+		String methods : s.charAt(index), s.indexOf(char), s.substring(int start, int end), s.concat("Amit"), s.trim(), s.toUpperCase(), String[] a = s.split("."), s.replace(a,b)
+		Code : reverse String . Find pallindrome.
+		Strings are immutable - it cannot be changed or altered.
+		To make the string mutable - String Buffer (Thread safe or synchronized) and String Builder (Not thread safe)
+		StringBuffer sb = new StringBuffer("String") -> sb.append(), sb.insert(index,"string"), sb.replace(start,end,String), sb.deleteCharAt(index), sb.reverse();
+		String comparison : .equals(compares the content)	==(compares the reference)
+8. Interfaces and Abstract Classes:
+		Abstraction - Process of hiding the implementation details and showing only functionality to user (What it does not to show how its done)
+		Interface : will have methods without body.
+		Scenario: Every country has its own traffic rules but there is some base rules which are common to all the countries. Base rules in Interfaces (green, orange, red)
+		Are varaibles defined in interfaces - yes but the access modifier should be public.
+		Interface resolves the problem of multiple inheritance -> 2 interfaces A and B -> public class X implements A,B{}
+		Abstract classes - contains abstact methods, non abstract methods (partial abstraction) -> extends by other class -> public abstract void method(); -> public abstract class name;
+			-> we cannot create an object of abstract class
+			-> we cannot have private as access modifiers for methods defined under abstract class.(Bcz some class has to extend it and with private it's not possible)
+		Interfaces - contains all abstract methods (provide 100 % abstraction) -> implements by other class
+9. Inheritance :
+		properties of parent class is used by the child class (using extends keyword)
+		Types of inheritance: Multiple inheritance not allowed, Single Inheritance, Multilevel inheritance, Hierarchial inheritance, hybrid inheritance
+10. Polymorphism:
+		Method overloading - same name but different arguments or differnt return types.
+		Method overriding - Same name and same arguments (Child class will override the method from parent class)
+11. Date and Calender :
+		Date d = new Date() -> To format the data in format MM/dd/yyyy HH:MM:SS   SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy"); String formattedDate = sdf.format(d);
+		Calendar cal = Calendar.getInstance();   	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+12. Constructors :
+		block of code that can be executed when object of class is created.
+		name same as class name and no return type
+		if no constructor defined, by default the compiler will invoke default constructor
+		Types : 1. Default Constructor 2. Parameterized constructor
+13. Super and this keyword:
+		Super() - used to refer or get parent constructor, variables and methods - 
+			super() - to call parent constructor in child
+			super.methodName() - to call parent class method to child
+			super.variable - to call parent class variable to child.
+		this() - used to refer the current class variable or method
+			Interview question : sum up the local and global variable
+14. Variables with their scope:
+		Instance variable - tied to the object, values assigned at time of object creation.
+		Local Varaible - scope lies only within the block in whcih it is defined.
+		Static varaible/Class variable - common value that is shared across all the objects.
+		Static method () - it accepts only static variable. Can be called directly without creating objects.(className.MethodName())
+15. Exceptions
+		if we suspect some scripts to throw exception, we can use Exception handling mechanism using try catch block
+		one try can have multiple catches
+		Arithmetic Exception, Array Index out of bound exception
+		try catch1 catch2 finally
+		Any scenario where Finally block will not be executed - if we forcefully closes the JVM.
+16. Collections Framework : Collection of classes and interfaces which helps in storing and processing data efficiently.
+		List : (ordered collections , allow duplicates ) - Array List, Linked List, Vector
+		Set : (unordered collections, does not allow duplicates) - Hashset, Linked Hashset, TreeSet.
+		Map : (entry in key value pair) - HashMap, TreeMap, Linked HashMap
+		Arraylist - add(), remove(),get(), contains(), indexOf(), iterator(), isEmpty(), size()
+		HashSet - add(), remove(), isEmpty(), size(), 
+		iterator()- next(), hasNext();
+		HashMap - put(key,Value), get(), remove(key), Set sm = map.entrySet()-convert hashmap to set and then we can extract key and value seperately.
+		HashMap - Not thread safe ( not synchronized) - one null key and multiple null values allowed - iterated using iterator()
+		vs 
+		HashTable - thread safe (synchronized - 1 thread at a time can operate) - null keys and values are not allowed - iterated using enumerator() {Vector also uses this}		
+17. Final keyword:
+		The value cannot be changed. If we try to assign final variable value to other variable it will give error(compile time error)
+		final can be class, method, variable
+		final variables - the values cannot be changed.
+		final class - cannot be extended to other classes
+		final method - we cannot override them.
+18. Packages and their usage in OOPS:
+		Packages - set of classes or interfaces  ex: java.lang (inbuild with java compiler), java.util
+		import package.className
+		Class A uses the class B directly by creating object if both A and B are in same package.
+		If Class A and B are in different packages, we have to explicitly call the package (import package.className)
+19. Encapsulation:
+		Access Modifiers : Public, Private, Protected, Default.
+		Default - access method anywhere inside the package. (not accessible outside package even without adding package)
+		Public - access method anywhere inside or outside the package
+		Private - Can be accessible only with in the class on which it is defined
+		Protected - Can be accessible only in sub classes(other package) - in same package accessible same as public.
+20. Streams - Introduced from Java 8
+		We can perform various aggregate condition on the data returned from collections classes - it reduces code complexity
+		names.stream().filter(n->n.startsWith("A")).forEach(n-> System.out.println(n));
+		names.stream().filter(n->n.length()>4).forEach(n-> System.out.println(n));
+		limit the result count : names.stream().filter(n->n.startsWith("A")).limit(1).forEach(n-> System.out.println(n));
+		Map : to manipulate the stream. Upper case all the letters in list. : names.stream().map(m->m.toUpperCase()).forEach(n-> System.out.print(n + " "));
+		Sort the names : names.stream().map(m->m.toUpperCase()).sorted().forEach(n-> System.out.print(n + " "));
+		In reverse order sort : sorted(Comparator.reverseOrder())
+		Merge 2 lists : Stream<String> concat = Stream.concat(names.stream(), names1.stream());
+		to check if string presnet in list : boolean anyMatch = names.stream().anyMatch(s->s.equalsIgnoreCase("Adam"));		System.out.println(anyMatch);
+		Sort and find unique numbers : List<Integer> collect1 = list.stream().sorted().distinct().collect(Collectors.toList());

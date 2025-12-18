@@ -309,7 +309,7 @@ public class BasicPrograms {
 	private void _19ArmstrongNumber() {
 		// 153 = cube(1) + cube(5) + cube(3)
 		
-		System.out.print("enter a number (to check Prime) : ");
+		System.out.print("enter a number (to check Armstrong number) : ");
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		int num1 = num;
@@ -350,18 +350,10 @@ public class BasicPrograms {
 		int year = sc.nextInt();
 		boolean flag = false;
 		
-		if(year%4 == 0) {
-			if(year%100 == 0) {
-				if(year%400 == 0) {
-					flag = true;
-				}else {
-					flag = false;
-				}
-			}else {
-				flag = false;
+		if(year%4==0) {
+			if(year%100 !=0 || year%400==0) {
+				flag=true;
 			}
-		}else {
-			flag = false;
 		}
 		
 		if(flag == true) {

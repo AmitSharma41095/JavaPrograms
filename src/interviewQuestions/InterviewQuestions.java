@@ -12,11 +12,17 @@ public class InterviewQuestions {
 		//2. Java program to find Prime number
 		checkPrimeNumber();
 		
+		//3. Java program to find Fibonacci series upto a given number range
+		generateFibonacciSeries();
+		
 		//4. Java program to swap two numbers without using third variable
 		swap_2_Numbers(20,50);
 		
 		//5. Java program to Find Factorial on given Number
 		factorialOfNumber();
+		
+		//6. Java program to find Armstrong Number
+		findArmstrongNumber();
 		
 		//7. Java program to Reverse Number
 		reverseNumber();
@@ -29,6 +35,45 @@ public class InterviewQuestions {
 		
 		//10. Java program to calculate the sum of digits of a number
 		sumOfDigitsOfNumber();
+	}
+
+	private static void findArmstrongNumber() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number to check Armstrong Number : ");
+		int num = sc.nextInt();
+		int num1 = num;
+		double arm = 0;
+		
+		while(num>0) {
+			int n = num%10;
+			arm = arm + Math.pow(n, 3);
+			num = num/10;
+		}
+		
+		if(num1==arm) {
+			System.out.println(num1 +" : Number is the armstrong number !!");
+		}else {
+			System.out.println(num1 +" : Number is not the armstrong number !!");
+		}
+		System.out.println("-------------------------------------------------------------------");
+	}
+
+	private static void generateFibonacciSeries() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a number till you want to generate Fibonnaci series : ");
+		int num = sc.nextInt();
+		
+		int num1 = 0;
+		int num2 = 1;
+		int sum = 0;
+		for(int i=1; i<=num; i++) {
+			System.out.print(num1 + " ");
+			sum = num1 + num2;
+			num1 = num2;
+			num2 = sum;
+		}
+		System.out.println("-------------------------------------------------------------------");
 	}
 
 	public static void odd_Even_Numbers() {
@@ -63,7 +108,6 @@ public class InterviewQuestions {
 			System.out.println("Entered number is "+ number + " ,And its not a prime number !!");
 		}
 		System.out.println("-------------------------------------------------------------------");
-		
 	}
 	
 	public static void swap_2_Numbers(int a, int b) {
